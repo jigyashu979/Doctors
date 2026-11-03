@@ -1,0 +1,1900 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Dr. Dhananjay Tiwari, Ph.D. | Clinical Psychologist & Mental Wellness Clinic</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts: Plus Jakarta Sans & Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                    },
+                    colors: {
+                        serene: {
+                            50: '#F4F7F5',
+                            100: '#E6ECE8',
+                            200: '#CCD8D1',
+                            300: '#A7BDB1',
+                            400: '#7F9E8F',
+                            500: '#5F8372', // Primary Sage Green
+                            600: '#4A695A',
+                            700: '#3A5246',
+                            800: '#2D3F37',
+                            900: '#1F2A25',
+                        },
+                        sand: {
+                            50: '#FBF9F6',
+                            100: '#F5F1EB',
+                            200: '#EBE2D5',
+                            300: '#DCceBC',
+                            400: '#C7B69F',
+                            500: '#B09B80',
+                        },
+                        calmBlue: {
+                            50: '#F0F6FA',
+                            100: '#E1EDF5',
+                            500: '#4B7B9E',
+                            700: '#325672',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar and animations */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F4F7F5;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #A7BDB1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #5F8372;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(220, 206, 188, 0.35);
+        }
+        .soft-shadow {
+            box-shadow: 0 10px 30px -5px rgba(45, 63, 55, 0.07);
+        }
+    </style>
+</head>
+<body class="bg-sand-50 text-slate-800 font-sans antialiased selection:bg-serene-200 selection:text-serene-900">
+
+    <!-- Crisis Support Banner -->
+    <div class="bg-serene-800 text-serene-100 text-xs sm:text-sm py-2 px-4">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-1 text-center sm:text-left">
+            <div class="flex items-center gap-2">
+                <span class="inline-block w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+                <span class="font-medium text-amber-200">24/7 Mental Health Emergency in India:</span>
+                <span>Call Tele-MANAS (14416) or KIRAN Helpline (1800-599-0019)</span>
+            </div>
+            <div class="text-xs text-serene-300">
+                Confidential, Free & Government-Certified
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-sand-200 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand / Logo -->
+            <a href="#home" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-serene-500 to-serene-700 flex items-center justify-center text-white shadow-md shadow-serene-500/20 group-hover:scale-105 transition-transform">
+                    <i data-lucide="flower-2" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <span class="font-serif text-xl sm:text-2xl font-bold text-serene-900 tracking-tight block leading-tight">Dr. Dr. Dhananjay Tiwari</span>
+                    <span class="text-[11px] font-medium uppercase tracking-wider text-serene-600">Ph.D. • RCI Clinical Psychologist</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-600">
+                <a href="#home" class="hover:text-serene-600 transition-colors">Home</a>
+                <a href="#about" class="hover:text-serene-600 transition-colors">About Dr.</a>
+                <a href="#services" class="hover:text-serene-600 transition-colors">Services</a>
+                <a href="#tracker" class="hover:text-serene-600 transition-colors">Track Booking</a>
+                <a href="#contact" class="hover:text-serene-600 transition-colors">Clinic & Contact</a>
+                <button onclick="openAdminModal()" class="flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-lg border border-sand-300 text-slate-700 hover:bg-sand-100 hover:text-serene-700 transition">
+                    <i data-lucide="lock" class="w-3.5 h-3.5 text-serene-600"></i> Doctor Portal
+                </button>
+                <a href="#book-appointment" class="inline-flex items-center gap-2 bg-serene-600 hover:bg-serene-700 text-white px-5 py-2.5 rounded-full text-sm font-semibold shadow-sm hover:shadow-md transition">
+                    <span>Book Appointment</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </nav>
+
+            <!-- Mobile Menu Toggle Button -->
+            <div class="flex items-center gap-2 md:hidden">
+                <a href="#book-appointment" class="bg-serene-600 text-white px-3.5 py-1.5 rounded-full text-xs font-medium">Book ₹500</a>
+                <button onclick="toggleMobileNav()" class="p-2 text-slate-700 hover:bg-sand-100 rounded-lg focus:outline-none" aria-label="Toggle menu">
+                    <i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Nav Menu Dropdown -->
+        <div id="mobile-nav" class="hidden md:hidden bg-white border-b border-sand-200 px-6 py-4 space-y-3">
+            <a href="#home" onclick="toggleMobileNav()" class="block text-slate-700 hover:text-serene-600 font-medium py-1">Home</a>
+            <a href="#about" onclick="toggleMobileNav()" class="block text-slate-700 hover:text-serene-600 font-medium py-1">About Doctor</a>
+            <a href="#services" onclick="toggleMobileNav()" class="block text-slate-700 hover:text-serene-600 font-medium py-1">Services & Therapy</a>
+            <a href="#tracker" onclick="toggleMobileNav()" class="block text-slate-700 hover:text-serene-600 font-medium py-1">Track Appointment</a>
+            <a href="#contact" onclick="toggleMobileNav()" class="block text-slate-700 hover:text-serene-600 font-medium py-1">Clinic Location & Hours</a>
+            <button onclick="toggleMobileNav(); openAdminModal();" class="w-full text-left flex items-center gap-2 text-serene-700 font-medium py-2 border-t border-sand-100">
+                <i data-lucide="shield-check" class="w-4 h-4"></i> Doctor / Admin Dashboard
+            </button>
+        </div>
+    </header>
+
+    <!-- 1. HERO SECTION -->
+    <section id="home" class="relative overflow-hidden pt-8 pb-16 lg:py-24 bg-gradient-to-b from-serene-50 via-white to-sand-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Column: Value Proposition -->
+                <div class="lg:col-span-7 space-y-6">
+                    <!-- Trust Pill -->
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-serene-100 text-serene-800 text-xs font-semibold tracking-wide uppercase">
+                        <i data-lucide="award" class="w-4 h-4 text-serene-600"></i>
+                        <span>Licensed Clinical Psychologist • RCI Reg: CRR/A89211</span>
+                    </div>
+
+                    <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl text-serene-900 font-bold leading-[1.15]">
+                        Your Mental Wellness <br>
+                        <span class="text-serene-600 italic font-medium">Truly Matters.</span>
+                    </h1>
+
+                    <p class="text-lg text-slate-600 max-w-xl leading-relaxed">
+                        Professional psychological care, compassionate support, and a healthier mind for a better life. Experience confidential, evidence-based therapy in a gentle and non-judgmental space.
+                    </p>
+
+                    <!-- CTAs -->
+                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+                        <a href="#book-appointment" class="inline-flex items-center justify-center gap-3 bg-serene-600 hover:bg-serene-700 text-white px-7 py-3.5 rounded-xl font-semibold shadow-lg shadow-serene-600/25 transition transform hover:-translate-y-0.5">
+                            <i data-lucide="calendar-check" class="w-5 h-5"></i>
+                            <span>Book an Appointment (₹500 Adv.)</span>
+                        </a>
+                        <a href="#services" class="inline-flex items-center justify-center gap-2 bg-white hover:bg-sand-100 text-serene-800 border border-sand-300 px-6 py-3.5 rounded-xl font-semibold transition">
+                            <i data-lucide="sparkles" class="w-5 h-5 text-serene-600"></i>
+                            <span>Explore Services</span>
+                        </a>
+                    </div>
+
+                    <!-- Trust Stats Bar -->
+                    <div class="pt-8 border-t border-sand-200 grid grid-cols-2 sm:grid-cols-4 gap-4">
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-bold text-serene-900 font-serif">12+</div>
+                            <div class="text-xs text-slate-500 font-medium">Years Clinical Exp.</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-bold text-serene-900 font-serif">4,500+</div>
+                            <div class="text-xs text-slate-500 font-medium">Sessions Conducted</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-bold text-serene-900 font-serif">4.9 / 5.0</div>
+                            <div class="text-xs text-slate-500 font-medium">Patient Satisfaction</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-bold text-serene-900 font-serif">100%</div>
+                            <div class="text-xs text-slate-500 font-medium">Confidential & Safe</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Doctor Hero Portrait Card -->
+                <div class="lg:col-span-5 relative">
+                    <!-- Subtle Glow Ring -->
+                    <div class="absolute -top-6 -left-6 w-72 h-72 bg-serene-200 rounded-full blur-3xl opacity-40 -z-10"></div>
+                    <div class="absolute -bottom-6 -right-6 w-72 h-72 bg-sand-300 rounded-full blur-3xl opacity-50 -z-10"></div>
+
+                    <div class="relative bg-white p-4 rounded-3xl shadow-xl border border-sand-200">
+                        <div class="relative rounded-2xl overflow-hidden aspect-[4/5] bg-serene-100">
+                            <!-- High quality professional doctor portrait -->
+                            <img src="https://images.unsplash.com/photo-1594824813576-2394982c5f0a?auto=format&fit=crop&w=900&q=80" 
+                                 alt="Dr. Dhananjay Tiwari - Clinical Psychologist" 
+                                 class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
+                                 onerror="this.src='https://placehold.co/600x750/E6ECE8/2D3F37?text=Dr.+Ananya+Sharma+Ph.D.'" />
+                            
+                            <!-- Overlay Badge: Availability -->
+                            <div class="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md p-3.5 rounded-2xl border border-sand-200 flex items-center justify-between shadow-lg">
+                                <div class="flex items-center gap-3">
+                                    <span class="relative flex h-3 w-3">
+                                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                      <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                                    </span>
+                                    <div>
+                                        <p class="text-xs font-bold text-slate-800">Slots Available This Week</p>
+                                        <p class="text-[11px] text-slate-500">In-Clinic & Secure Online Sessions</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs font-semibold text-serene-700 bg-serene-100 px-2.5 py-1 rounded-md">New Delhi & Virtual</span>
+                            </div>
+                        </div>
+
+                        <!-- Floating Certification Tag -->
+                        <div class="absolute -top-4 -right-4 bg-white py-2 px-4 rounded-2xl shadow-lg border border-sand-200 flex items-center gap-2">
+                            <i data-lucide="check-check" class="w-5 h-5 text-emerald-600"></i>
+                            <span class="text-xs font-bold text-slate-800">Verified Practitioner</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST INDICATORS & TESTIMONIALS STRIP -->
+    <section class="py-12 bg-white border-y border-sand-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-center text-xs font-semibold uppercase tracking-wider text-serene-600 mb-8">What Healing Patients Say About Their Journey</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Review 1 -->
+                <div class="p-6 rounded-2xl bg-sand-50 border border-sand-200/80 flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="flex text-amber-400">
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                        </div>
+                        <p class="text-sm text-slate-600 italic leading-relaxed">
+                            "Dr. Ananya helped me navigate acute workplace panic and anxiety. Her scientific yet deeply empathetic CBT techniques gave me back control of my daily peace."
+                        </p>
+                    </div>
+                    <div class="pt-4 mt-4 border-t border-sand-200 flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full bg-serene-200 text-serene-800 font-bold flex items-center justify-center text-xs">P.M.</div>
+                        <div>
+                            <p class="text-xs font-semibold text-slate-800">Pooja M.</p>
+                            <p class="text-[10px] text-slate-400">Anxiety Recovery • 14 Sessions</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="p-6 rounded-2xl bg-sand-50 border border-sand-200/80 flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="flex text-amber-400">
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                        </div>
+                        <p class="text-sm text-slate-600 italic leading-relaxed">
+                            "Our relationship was at a breaking point with constant misunderstandings. Her couples counselling provided an unbiased sanctuary where we learned how to genuinely listen."
+                        </p>
+                    </div>
+                    <div class="pt-4 mt-4 border-t border-sand-200 flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full bg-serene-200 text-serene-800 font-bold flex items-center justify-center text-xs">R&K</div>
+                        <div>
+                            <p class="text-xs font-semibold text-slate-800">Rohan & Kritika</p>
+                            <p class="text-[10px] text-slate-400">Relationship Counselling • 8 Sessions</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="p-6 rounded-2xl bg-sand-50 border border-sand-200/80 flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="flex text-amber-400">
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                        </div>
+                        <p class="text-sm text-slate-600 italic leading-relaxed">
+                            "Booking was seamless with the advance ₹500 confirmation and immediate WhatsApp updates. Most importantly, Dr. Ananya is non-judgmental, gentle, and profoundly insightful."
+                        </p>
+                    </div>
+                    <div class="pt-4 mt-4 border-t border-sand-200 flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full bg-serene-200 text-serene-800 font-bold flex items-center justify-center text-xs">S.V.</div>
+                        <div>
+                            <p class="text-xs font-semibold text-slate-800">Siddharth V.</p>
+                            <p class="text-[10px] text-slate-400">Personal Growth & Depression Care</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. ABOUT DOCTOR SECTION -->
+    <section id="about" class="py-20 bg-sand-100/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-5">
+                    <div class="relative">
+                        <div class="w-full h-[520px] rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+                            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=800&q=80" 
+                                 alt="Dr. Dhananjay Tiwari in Consultation Room" 
+                                 class="w-full h-full object-cover"
+                                 onerror="this.src='https://placehold.co/600x800/CCD8D1/1F2A25?text=Dr.+Ananya+Sharma'" />
+                        </div>
+                        <!-- Experience Floater -->
+                        <div class="absolute -bottom-6 -left-6 bg-serene-900 text-white p-6 rounded-2xl shadow-xl max-w-xs">
+                            <div class="flex items-center gap-3 mb-2">
+                                <i data-lucide="shield-check" class="w-6 h-6 text-serene-300"></i>
+                                <span class="text-xs uppercase font-bold tracking-wider text-serene-300">Clinical Excellence</span>
+                            </div>
+                            <p class="text-sm text-serene-100">Practicing empathetic clinical psychology rooted in neuroscience & humanistic unconditional positive regard.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 space-y-6 lg:pl-6">
+                    <div>
+                        <span class="text-serene-600 font-semibold text-sm tracking-wider uppercase">Meet Your Psychologist</span>
+                        <h2 class="font-serif text-3xl sm:text-4xl text-serene-900 font-bold mt-1">Dr. Dhananjay Tiwari</h2>
+                        <p class="text-sm text-serene-700 font-medium">Ph.D. in Clinical Psychology (NIMHANS/DU), M.Phil, RCI Reg. CRR/A89211</p>
+                    </div>
+
+                    <p class="text-slate-600 leading-relaxed">
+                        With over 12 years of specialized clinical experience, Dr. Dhananjay Tiwari has dedicated her life to helping individuals, couples, and adolescents break free from emotional turmoil, unresolved trauma, anxiety, and depression.
+                    </p>
+
+                    <div class="space-y-4">
+                        <h4 class="text-sm font-bold uppercase tracking-wider text-slate-800">Educational Background & Credentials</h4>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+                            <div class="p-3 bg-white rounded-xl border border-sand-200 flex items-start gap-3">
+                                <i data-lucide="graduation-cap" class="w-5 h-5 text-serene-600 flex-shrink-0 mt-0.5"></i>
+                                <div>
+                                    <p class="font-semibold text-slate-800">Ph.D. in Clinical Psychology</p>
+                                    <p class="text-xs text-slate-500">Gold Medalist Researcher</p>
+                                </div>
+                            </div>
+                            <div class="p-3 bg-white rounded-xl border border-sand-200 flex items-start gap-3">
+                                <i data-lucide="book-open" class="w-5 h-5 text-serene-600 flex-shrink-0 mt-0.5"></i>
+                                <div>
+                                    <p class="font-semibold text-slate-800">M.Phil Clinical Psychology</p>
+                                    <p class="text-xs text-slate-500">RCI Recognized Training</p>
+                                </div>
+                            </div>
+                            <div class="p-3 bg-white rounded-xl border border-sand-200 flex items-start gap-3">
+                                <i data-lucide="award" class="w-5 h-5 text-serene-600 flex-shrink-0 mt-0.5"></i>
+                                <div>
+                                    <p class="font-semibold text-slate-800">Certified CBT & REBT Therapist</p>
+                                    <p class="text-xs text-slate-500">Beck Institute Affiliated</p>
+                                </div>
+                            </div>
+                            <div class="p-3 bg-white rounded-xl border border-sand-200 flex items-start gap-3">
+                                <i data-lucide="heart-handshake" class="w-5 h-5 text-serene-600 flex-shrink-0 mt-0.5"></i>
+                                <div>
+                                    <p class="font-semibold text-slate-800">Trauma-Informed EMDR Practitioner</p>
+                                    <p class="text-xs text-slate-500">Advanced Certified</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Philosophy Box -->
+                    <div class="p-5 rounded-2xl bg-serene-50 border border-serene-200 text-serene-900">
+                        <h4 class="font-serif font-bold text-base mb-1 flex items-center gap-2">
+                            <i data-lucide="quote" class="w-4 h-4 text-serene-600"></i> My Care Philosophy
+                        </h4>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            "Therapy is not about 'fixing' someone who is broken; it is about providing the warmth, insight, and clinical tools to uncover the innate strength within you. Together, we navigate emotions with honesty, dignity, and scientific precision."
+                        </p>
+                    </div>
+
+                    <div class="pt-2 flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-white border border-sand-300 rounded-full text-xs font-medium text-slate-700">Cognitive Behavioral Therapy (CBT)</span>
+                        <span class="px-3 py-1 bg-white border border-sand-300 rounded-full text-xs font-medium text-slate-700">Mindfulness & Somatic Grounding</span>
+                        <span class="px-3 py-1 bg-white border border-sand-300 rounded-full text-xs font-medium text-slate-700">Family Systems Therapy</span>
+                        <span class="px-3 py-1 bg-white border border-sand-300 rounded-full text-xs font-medium text-slate-700">Compassion Focused Therapy</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. SERVICES SECTION -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-serene-600 font-semibold text-xs uppercase tracking-widest">Specialized Psychological Services</span>
+                <h2 class="font-serif text-3xl sm:text-4xl text-serene-900 font-bold mt-2">Therapeutic Care Tailored To Your Needs</h2>
+                <p class="text-slate-600 text-sm mt-3">Individualized treatment regimens structured through evidence-backed methodologies.</p>
+            </div>
+
+            <!-- 8 Services Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="services-grid">
+                <!-- Service 1 -->
+                <div class="group p-6 rounded-2xl bg-sand-50/70 border border-sand-200 hover:border-serene-400 hover:bg-white hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-serene-100 text-serene-700 flex items-center justify-center mb-5 group-hover:bg-serene-600 group-hover:text-white transition">
+                            <i data-lucide="user" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-lg text-slate-800 mb-2">Individual Psychological Counselling</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                            One-on-one personalized therapy focusing on inner conflicts, trauma resolution, self-esteem, and life transitions in complete confidentiality.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="flex items-center justify-between text-xs text-slate-500 mb-4 pt-3 border-t border-sand-200">
+                            <span>Duration: 50 Mins</span>
+                            <span class="font-semibold text-serene-700">₹500 Adv. Booking</span>
+                        </div>
+                        <button onclick="prefillService('Individual Psychological Counselling')" class="w-full py-2.5 px-4 bg-serene-50 group-hover:bg-serene-600 text-serene-800 group-hover:text-white rounded-xl text-xs font-semibold flex items-center justify-center gap-2 transition">
+                            <span>Book Now</span>
+                            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="group p-6 rounded-2xl bg-sand-50/70 border border-sand-200 hover:border-serene-400 hover:bg-white hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-serene-100 text-serene-700 flex items-center justify-center mb-5 group-hover:bg-serene-600 group-hover:text-white transition">
+                            <i data-lucide="activity" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-lg text-slate-800 mb-2">Anxiety & Stress Management</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                            Relieve chronic panic, generalized worry, burnout, and social anxiety with clinically proven Cognitive Behavioral Therapy (CBT) and somatic calm.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="flex items-center justify-between text-xs text-slate-500 mb-4 pt-3 border-t border-sand-200">
+                            <span>Duration: 50 Mins</span>
+                            <span class="font-semibold text-serene-700">₹500 Adv. Booking</span>
+                        </div>
+                        <button onclick="prefillService('Anxiety and Stress Management')" class="w-full py-2.5 px-4 bg-serene-50 group-hover:bg-serene-600 text-serene-800 group-hover:text-white rounded-xl text-xs font-semibold flex items-center justify-center gap-2 transition">
+                            <span>Book Now</span>
+                            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="group p-6 rounded-2xl bg-sand-50/70 border border-sand-200 hover:border-serene-400 hover:bg-white hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-serene-100 text-serene-700 flex items-center justify-center mb-5 group-hover:bg-serene-600 group-hover:text-white transition">
+                            <i data-lucide="sun-medium" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-lg text-slate-800 mb-2">Depression Counselling</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                            Overcome feelings of numbness, hopelessness, and loss of interest. Step-by-step guidance to reclaim motivation, joy, and emotional stability.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="flex items-center justify-between text-xs text-slate-500 mb-4 pt-3 border-t border-sand-200">
+                            <span>Duration: 50 Mins</span>
+                            <span class="font-semibold text-serene-700">₹500 Adv. Booking</span>
+                        </div>
+                        <button onclick="prefillService('Depression Counselling')" class="w-full py-2.5 px-4 bg-serene-50 group-hover:bg-serene-600 text-serene-800 group-hover:text-white rounded-xl text-xs font-semibold flex items-center justify-center gap-2 transition">
+                            <span>Book Now</span>
+                            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="group p-6 rounded-2xl bg-sand-50/70 border border-sand-200 hover:border-serene-400 hover:bg-white hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-serene-100 text-serene-700 flex items-center justify-center mb-5 group-hover:bg-serene-600 group-hover:text-white transition">
+                            <i data-lucide="heart" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-lg text-slate-800 mb-2">Relationship Counselling</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                            Strengthen mutual empathy, resolve recurrent disputes, rebuild intimacy, and rebuild broken trust for dating, engaged, and married couples.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="flex items-center justify-between text-xs text-slate-500 mb-4 pt-3 border-t border-sand-200">
+                            <span>Duration: 60 Mins</span>
+                            <span class="font-semibold text-serene-700">₹500 Adv. Booking</span>
+                        </div>
+                        <button onclick="prefillService('Relationship Counselling')" class="w-full py-2.5 px-4 bg-serene-50 group-hover:bg-serene-600 text-serene-800 group-hover:text-white rounded-xl text-xs font-semibold flex items-center justify-center gap-2 transition">
+                            <span>Book Now</span>
+                            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="group p-6 rounded-2xl bg-sand-50/70 border border-sand-200 hover:border-serene-400 hover:bg-white hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-serene-100 text-serene-700 flex items-center justify-center mb-5 group-hover:bg-serene-600 group-hover:text-white transition">
+                            <i data-lucide="users" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-lg text-slate-800 mb-2">Family Counselling</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                            Address intergenerational conflict, boundary distress, parenting dilemmas, and establish harmonious healthy dynamics at home.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="flex items-center justify-between text-xs text-slate-500 mb-4 pt-3 border-t border-sand-200">
+                            <span>Duration: 60 Mins</span>
+                            <span class="font-semibold text-serene-700">₹500 Adv. Booking</span>
+                        </div>
+                        <button onclick="prefillService('Family Counselling')" class="w-full py-2.5 px-4 bg-serene-50 group-hover:bg-serene-600 text-serene-800 group-hover:text-white rounded-xl text-xs font-semibold flex items-center justify-center gap-2 transition">
+                            <span>Book Now</span>
+                            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="group p-6 rounded-2xl bg-sand-50/70 border border-sand-200 hover:border-serene-400 hover:bg-white hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-serene-100 text-serene-700 flex items-center justify-center mb-5 group-hover:bg-serene-600 group-hover:text-white transition">
+                            <i data-lucide="smile" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-lg text-slate-800 mb-2">Child & Adolescent Counselling</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                            Specialized therapeutic care for school anxiety, peer pressure, ADHD support, behavioral hurdles, and adolescent emotional regulation.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="flex items-center justify-between text-xs text-slate-500 mb-4 pt-3 border-t border-sand-200">
+                            <span>Duration: 45 Mins</span>
+                            <span class="font-semibold text-serene-700">₹500 Adv. Booking</span>
+                        </div>
+                        <button onclick="prefillService('Child and Adolescent Counselling')" class="w-full py-2.5 px-4 bg-serene-50 group-hover:bg-serene-600 text-serene-800 group-hover:text-white rounded-xl text-xs font-semibold flex items-center justify-center gap-2 transition">
+                            <span>Book Now</span>
+                            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 7 -->
+                <div class="group p-6 rounded-2xl bg-sand-50/70 border border-sand-200 hover:border-serene-400 hover:bg-white hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-serene-100 text-serene-700 flex items-center justify-center mb-5 group-hover:bg-serene-600 group-hover:text-white transition">
+                            <i data-lucide="flame" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-lg text-slate-800 mb-2">Anger Management</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                            Understand emotional triggers, diffuse explosive rage patterns, and master constructive communication channels through targeted self-regulation.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="flex items-center justify-between text-xs text-slate-500 mb-4 pt-3 border-t border-sand-200">
+                            <span>Duration: 50 Mins</span>
+                            <span class="font-semibold text-serene-700">₹500 Adv. Booking</span>
+                        </div>
+                        <button onclick="prefillService('Anger Management')" class="w-full py-2.5 px-4 bg-serene-50 group-hover:bg-serene-600 text-serene-800 group-hover:text-white rounded-xl text-xs font-semibold flex items-center justify-center gap-2 transition">
+                            <span>Book Now</span>
+                            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 8 -->
+                <div class="group p-6 rounded-2xl bg-sand-50/70 border border-sand-200 hover:border-serene-400 hover:bg-white hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-serene-100 text-serene-700 flex items-center justify-center mb-5 group-hover:bg-serene-600 group-hover:text-white transition">
+                            <i data-lucide="compass" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-lg text-slate-800 mb-2">Personal Development & Wellness</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                            Enhance emotional quotient (EQ), eliminate imposter syndrome, overcome procrastination, and cultivate clarity, purpose, and inner resilience.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="flex items-center justify-between text-xs text-slate-500 mb-4 pt-3 border-t border-sand-200">
+                            <span>Duration: 50 Mins</span>
+                            <span class="font-semibold text-serene-700">₹500 Adv. Booking</span>
+                        </div>
+                        <button onclick="prefillService('Personal Development and Emotional Wellness')" class="w-full py-2.5 px-4 bg-serene-50 group-hover:bg-serene-600 text-serene-800 group-hover:text-white rounded-xl text-xs font-semibold flex items-center justify-center gap-2 transition">
+                            <span>Book Now</span>
+                            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4 & 5. APPOINTMENT BOOKING SECTION WITH FORM -->
+    <section id="book-appointment" class="py-20 bg-gradient-to-b from-sand-100 via-serene-50 to-sand-50">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-xl mx-auto mb-12">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-serene-200/80 text-serene-900 text-xs font-bold uppercase tracking-wider">
+                    <i data-lucide="shield" class="w-3.5 h-3.5 text-serene-700"></i> Easy & Secure
+                </span>
+                <h2 class="font-serif text-3xl sm:text-4xl text-serene-900 font-bold mt-2">Book Your Confidential Consultation</h2>
+                <p class="text-slate-600 text-sm mt-2">
+                    A mandatory <span class="font-semibold text-serene-800">₹500 advance slot reservation fee</span> is required via UPI to eliminate no-shows and confirm your doctor appointment.
+                </p>
+            </div>
+
+            <div class="glass-card rounded-3xl p-6 sm:p-10 shadow-2xl relative border border-white">
+                <!-- Step indicator -->
+                <div class="flex items-center justify-center gap-3 sm:gap-6 mb-8 text-xs font-semibold">
+                    <div class="flex items-center gap-2 text-serene-700">
+                        <span class="w-7 h-7 rounded-full bg-serene-600 text-white flex items-center justify-center font-bold">1</span>
+                        <span>Patient Details</span>
+                    </div>
+                    <div class="w-12 h-0.5 bg-serene-300"></div>
+                    <div class="flex items-center gap-2 text-slate-400" id="step-pay-indicator">
+                        <span class="w-7 h-7 rounded-full bg-sand-200 text-slate-600 flex items-center justify-center font-bold">2</span>
+                        <span>₹500 UPI Advance</span>
+                    </div>
+                    <div class="w-12 h-0.5 bg-sand-200"></div>
+                    <div class="flex items-center gap-2 text-slate-400" id="step-wa-indicator">
+                        <span class="w-7 h-7 rounded-full bg-sand-200 text-slate-600 flex items-center justify-center font-bold">3</span>
+                        <span>WhatsApp Confirmation</span>
+                    </div>
+                </div>
+
+                <!-- Booking Form -->
+                <form id="appointment-form" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        
+                        <!-- Full Name -->
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5" for="patient-name">
+                                Full Name <span class="text-rose-500">*</span>
+                            </label>
+                            <div class="relative">
+                                <i data-lucide="user" class="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5"></i>
+                                <input type="text" id="patient-name" required placeholder="e.g., Ankit Verma"
+                                       class="w-full pl-10 pr-4 py-3 bg-white border border-sand-300 rounded-xl text-sm focus:ring-2 focus:ring-serene-500 focus:border-serene-500 outline-none transition">
+                            </div>
+                            <span class="text-[11px] text-rose-500 hidden" id="err-name">Please enter your full name.</span>
+                        </div>
+
+                        <!-- Mobile Number (10 digit India) -->
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5" for="patient-phone">
+                                Mobile Number (for WhatsApp Updates) <span class="text-rose-500">*</span>
+                            </label>
+                            <div class="relative flex">
+                                <span class="inline-flex items-center px-3 rounded-l-xl border border-r-0 border-sand-300 bg-sand-100 text-slate-600 text-sm font-medium">
+                                    +91
+                                </span>
+                                <input type="tel" id="patient-phone" required maxlength="10" placeholder="9876543210"
+                                       class="w-full px-4 py-3 bg-white border border-sand-300 rounded-r-xl text-sm focus:ring-2 focus:ring-serene-500 focus:border-serene-500 outline-none transition">
+                            </div>
+                            <span class="text-[11px] text-rose-500 hidden" id="err-phone">Please enter a valid 10-digit mobile number.</span>
+                        </div>
+
+                        <!-- Age -->
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5" for="patient-age">
+                                Patient Age <span class="text-rose-500">*</span>
+                            </label>
+                            <div class="relative">
+                                <i data-lucide="cake" class="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5"></i>
+                                <input type="number" id="patient-age" min="5" max="100" required placeholder="e.g., 28"
+                                       class="w-full pl-10 pr-4 py-3 bg-white border border-sand-300 rounded-xl text-sm focus:ring-2 focus:ring-serene-500 focus:border-serene-500 outline-none transition">
+                            </div>
+                            <span class="text-[11px] text-rose-500 hidden" id="err-age">Please enter a valid age (5 - 100).</span>
+                        </div>
+
+                        <!-- Select Service -->
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5" for="service-select">
+                                Psychological Service Needed <span class="text-rose-500">*</span>
+                            </label>
+                            <div class="relative">
+                                <select id="service-select" required
+                                        class="w-full px-4 py-3 bg-white border border-sand-300 rounded-xl text-sm focus:ring-2 focus:ring-serene-500 focus:border-serene-500 outline-none transition appearance-none">
+                                    <option value="" disabled selected>Select a psychological service</option>
+                                    <option value="Individual Psychological Counselling">Individual Psychological Counselling</option>
+                                    <option value="Anxiety and Stress Management">Anxiety and Stress Management</option>
+                                    <option value="Depression Counselling">Depression Counselling</option>
+                                    <option value="Relationship Counselling">Relationship Counselling</option>
+                                    <option value="Family Counselling">Family Counselling</option>
+                                    <option value="Child and Adolescent Counselling">Child and Adolescent Counselling</option>
+                                    <option value="Anger Management">Anger Management</option>
+                                    <option value="Personal Development and Emotional Wellness">Personal Development & Wellness</option>
+                                </select>
+                                <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 absolute right-3.5 top-3.5 pointer-events-none"></i>
+                            </div>
+                        </div>
+
+                        <!-- Appointment Date -->
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5" for="appointment-date">
+                                Preferred Date <span class="text-rose-500">*</span>
+                            </label>
+                            <div class="relative">
+                                <input type="date" id="appointment-date" required
+                                       class="w-full px-4 py-3 bg-white border border-sand-300 rounded-xl text-sm focus:ring-2 focus:ring-serene-500 focus:border-serene-500 outline-none transition">
+                            </div>
+                            <span class="text-[11px] text-rose-500 hidden" id="err-date">Please choose a valid upcoming date.</span>
+                        </div>
+
+                        <!-- Preferred Slot -->
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5" for="time-slot">
+                                Preferred Time Slot <span class="text-rose-500">*</span>
+                            </label>
+                            <div class="relative">
+                                <select id="time-slot" required
+                                        class="w-full px-4 py-3 bg-white border border-sand-300 rounded-xl text-sm focus:ring-2 focus:ring-serene-500 focus:border-serene-500 outline-none transition appearance-none">
+                                    <option value="10:30 AM - 11:20 AM">10:30 AM - 11:20 AM (Morning)</option>
+                                    <option value="12:00 PM - 12:50 PM">12:00 PM - 12:50 PM (Afternoon)</option>
+                                    <option value="03:00 PM - 03:50 PM">03:00 PM - 03:50 PM (Afternoon)</option>
+                                    <option value="05:30 PM - 06:20 PM" selected>05:30 PM - 06:20 PM (Evening)</option>
+                                    <option value="06:30 PM - 07:20 PM">06:30 PM - 07:20 PM (Evening)</option>
+                                </select>
+                                <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 absolute right-3.5 top-3.5 pointer-events-none"></i>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Message / Concern -->
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5" for="patient-concern">
+                            Describe Your Concern / What Brings You To Therapy? <span class="text-rose-500">*</span>
+                        </label>
+                        <textarea id="patient-concern" rows="3" required placeholder="Share what symptoms or emotional challenges you have been experiencing recently..."
+                                  class="w-full p-4 bg-white border border-sand-300 rounded-xl text-sm focus:ring-2 focus:ring-serene-500 focus:border-serene-500 outline-none transition"></textarea>
+                        <p class="text-[11px] text-slate-500 mt-1 flex items-center gap-1">
+                            <i data-lucide="lock" class="w-3 h-3 text-serene-600"></i> Everything shared here is strictly bound by doctor-patient confidentiality.
+                        </p>
+                    </div>
+
+                    <!-- Advance Fee Summary Callout -->
+                    <div class="p-4 rounded-xl bg-serene-100/70 border border-serene-200 flex flex-col sm:flex-row items-center justify-between gap-3">
+                        <div class="flex items-center gap-3 text-left">
+                            <div class="w-10 h-10 rounded-lg bg-serene-600 text-white flex items-center justify-center font-bold text-lg">
+                                ₹
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-serene-900 uppercase">Mandatory Advance Booking Fee</p>
+                                <p class="text-xs text-serene-700">₹500 advance (Adjusted into your consultation bill at clinic).</p>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-2xl font-bold font-serif text-serene-900">₹500</span>
+                            <span class="text-xs block text-slate-500">Instant UPI Verification</span>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" 
+                            class="w-full py-4 bg-serene-600 hover:bg-serene-700 text-white rounded-xl font-bold text-base shadow-lg shadow-serene-600/30 flex items-center justify-center gap-2 transition transform active:scale-[0.99]">
+                        <i data-lucide="credit-card" class="w-5 h-5"></i>
+                        <span>Submit & Proceed to Pay ₹500 Advance</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. UPI PAYMENT MODAL (POPUP SYSTEM) -->
+    <div id="payment-modal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-sand-200 relative my-8 animate-in fade-in zoom-in-95 duration-200">
+            
+            <!-- Close Modal -->
+            <button onclick="closePaymentModal()" class="absolute top-5 right-5 text-slate-400 hover:text-slate-600 p-1 rounded-full hover:bg-slate-100 transition">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+
+            <!-- Modal Header -->
+            <div class="text-center pb-4 border-b border-sand-200">
+                <div class="inline-flex p-2.5 rounded-2xl bg-serene-100 text-serene-700 mb-2">
+                    <i data-lucide="wallet" class="w-6 h-6"></i>
+                </div>
+                <h3 class="font-serif text-2xl font-bold text-slate-900">Advance Booking Checkout</h3>
+                <p class="text-xs text-slate-500 mt-1">Order Ref: <span id="modal-order-id" class="font-mono font-bold text-serene-700">MIND-2026-XXXX</span></p>
+            </div>
+
+            <!-- Booking Summary Cards -->
+            <div class="mt-4 p-4 rounded-xl bg-sand-50 border border-sand-200 space-y-2 text-xs">
+                <div class="flex justify-between">
+                    <span class="text-slate-500">Patient:</span>
+                    <span class="font-semibold text-slate-800" id="summary-name">-</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-slate-500">Service:</span>
+                    <span class="font-semibold text-slate-800" id="summary-service">-</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-slate-500">Date & Slot:</span>
+                    <span class="font-semibold text-slate-800" id="summary-slot">-</span>
+                </div>
+                <div class="flex justify-between pt-2 border-t border-sand-200 font-bold text-sm">
+                    <span class="text-serene-800">Mandatory Advance Fee:</span>
+                    <span class="text-serene-700">₹500.00</span>
+                </div>
+            </div>
+
+            <!-- Payment Gateway Simulator / UPI Apps -->
+            <div class="mt-5 space-y-4">
+                <p class="text-xs font-bold uppercase tracking-wider text-slate-700 text-center">Scan QR or Pay With Any UPI App</p>
+
+                <!-- Dynamic QR Code Container -->
+                <div class="p-4 bg-white border-2 border-dashed border-serene-300 rounded-2xl text-center flex flex-col items-center">
+                    <div class="relative bg-white p-2 rounded-xl border border-sand-200 shadow-inner">
+                        <!-- Simulated UPI QR Code image -->
+                        <img id="qr-code-img" 
+                             src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=upi://pay?pa=dr.ananya@oksbi%26pn=DrAnanyaSharmaClinic%26am=500%26cu=INR%26tn=AdvanceBooking" 
+                             alt="Scan UPI QR" 
+                             class="w-40 h-40 object-contain mx-auto" />
+                        
+                        <!-- Overlay verification indicator during check -->
+                        <div id="verifying-overlay" class="absolute inset-0 bg-white/95 rounded-xl hidden flex-col items-center justify-center p-3">
+                            <div class="w-8 h-8 border-3 border-serene-600 border-t-transparent rounded-full animate-spin mb-2"></div>
+                            <span class="text-xs font-bold text-serene-800">Verifying Gateway Signature...</span>
+                            <span class="text-[10px] text-slate-500">Validating webhook token</span>
+                        </div>
+                    </div>
+
+                    <!-- UPI ID String -->
+                    <div class="mt-3 flex items-center justify-center gap-2">
+                        <span class="text-xs text-slate-600 font-mono bg-sand-100 px-3 py-1 rounded-lg border border-sand-200">
+                            UPI ID: <span id="display-upi-id" class="font-bold text-slate-800">dr.ananya@oksbi</span>
+                        </span>
+                        <button onclick="copyUPI()" title="Copy UPI ID" class="p-1.5 text-serene-700 hover:bg-serene-50 rounded-md border border-serene-200 transition">
+                            <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- UPI Apps Supported Icons -->
+                <div class="flex items-center justify-center gap-3 pt-1">
+                    <span class="text-[11px] font-semibold text-slate-500">Supported Apps:</span>
+                    <span class="px-2.5 py-1 bg-sand-100 rounded-md text-[11px] font-bold text-slate-700">Google Pay</span>
+                    <span class="px-2.5 py-1 bg-sand-100 rounded-md text-[11px] font-bold text-slate-700">PhonePe</span>
+                    <span class="px-2.5 py-1 bg-sand-100 rounded-md text-[11px] font-bold text-slate-700">Paytm</span>
+                    <span class="px-2.5 py-1 bg-sand-100 rounded-md text-[11px] font-bold text-slate-700">BHIM UPI</span>
+                </div>
+
+                <!-- Security Verification Notice -->
+                <div class="bg-amber-50 border border-amber-200 rounded-xl p-3 text-[11px] text-amber-900 leading-snug flex items-start gap-2">
+                    <i data-lucide="alert-circle" class="w-4 h-4 text-amber-700 flex-shrink-0 mt-0.5"></i>
+                    <div>
+                        <span class="font-bold">Automated Integrity Protocol:</span> Appointments are <strong>never</strong> confirmed simply because an app was clicked. Payment must be verified by Razorpay / UPI server-side signatures.
+                    </div>
+                </div>
+
+                <!-- Action Button simulating verified callback -->
+                <button id="verify-pay-btn" onclick="simulatePaymentVerification()" 
+                        class="w-full py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl font-bold text-sm shadow-md transition flex items-center justify-center gap-2">
+                    <i data-lucide="shield-check" class="w-4 h-4"></i>
+                    <span>Verify & Confirm ₹500 Payment</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 7. WHATSAPP CONFIRMATION MODAL -->
+    <div id="whatsapp-modal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-sand-200 relative animate-in fade-in zoom-in-95 duration-200">
+            
+            <div class="text-center">
+                <div class="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-3 shadow-md">
+                    <i data-lucide="check" class="w-8 h-8"></i>
+                </div>
+                <span class="inline-block px-3 py-1 bg-emerald-50 text-emerald-700 text-xs font-bold rounded-full mb-1">
+                    Advance Payment Verified Successfully!
+                </span>
+                <h3 class="font-serif text-2xl font-bold text-slate-900">Appointment Booked</h3>
+                <p class="text-xs text-slate-500 mt-1">Reference ID: <span id="wa-modal-id" class="font-mono font-bold text-emerald-700"></span></p>
+            </div>
+
+            <!-- WhatsApp Pre-filled Preview Box -->
+            <div class="mt-6">
+                <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5 flex items-center justify-between">
+                    <span>Pre-filled WhatsApp Notification:</span>
+                    <span class="text-[10px] text-emerald-600 font-normal">To Doctor's WhatsApp</span>
+                </label>
+                <div class="p-3.5 bg-sand-50 rounded-xl border border-sand-200 font-mono text-xs text-slate-700 whitespace-pre-line leading-relaxed" id="whatsapp-message-preview">
+                    <!-- Dynamic Text will be inserted here -->
+                </div>
+            </div>
+
+            <div class="mt-6 space-y-3">
+                <!-- Action: Open WhatsApp Button -->
+                <button id="send-whatsapp-btn" onclick="openWhatsAppChat()" 
+                        class="w-full py-3.5 bg-[#25D366] hover:bg-[#20BD5A] text-white rounded-xl font-bold text-sm shadow-lg shadow-emerald-500/25 flex items-center justify-center gap-2 transition">
+                    <i data-lucide="message-circle" class="w-5 h-5"></i>
+                    <span>Open WhatsApp to Send to Doctor</span>
+                </button>
+
+                <div class="flex gap-2">
+                    <button onclick="copyConfirmationText()" class="flex-1 py-2.5 px-3 border border-sand-300 rounded-xl text-xs font-semibold text-slate-700 hover:bg-sand-100 transition flex items-center justify-center gap-1.5">
+                        <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                        <span>Copy Details</span>
+                    </button>
+                    <button onclick="closeWhatsAppModal()" class="flex-1 py-2.5 px-3 bg-serene-100 text-serene-800 rounded-xl text-xs font-semibold hover:bg-serene-200 transition">
+                        Done / View Tracking
+                    </button>
+                </div>
+                
+                <p class="text-[11px] text-center text-slate-400">
+                    *WhatsApp will launch with this text pre-filled. Simply tap 'Send' to complete final booking receipt directly with the clinic.
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 8. PATIENT APPOINTMENT STATUS TRACKER -->
+    <section id="tracker" class="py-16 bg-white border-y border-sand-200">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <span class="text-xs font-bold text-serene-600 uppercase tracking-widest">Self-Service Portal</span>
+                <h2 class="font-serif text-2xl sm:text-3xl font-bold text-serene-900 mt-1">Check Your Appointment Status</h2>
+                <p class="text-xs sm:text-sm text-slate-500">Track payment verification, doctor review, and confirmed consultation schedule.</p>
+            </div>
+
+            <div class="bg-sand-50 p-6 sm:p-8 rounded-3xl border border-sand-200 shadow-sm">
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <div class="relative flex-1">
+                        <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5"></i>
+                        <input type="text" id="track-input" placeholder="Enter Booking ID (e.g. MIND-2026-8812) or 10-digit Phone" 
+                               class="w-full pl-10 pr-4 py-3 bg-white border border-sand-300 rounded-xl text-sm focus:ring-2 focus:ring-serene-500 outline-none">
+                    </div>
+                    <button onclick="trackAppointmentStatus()" class="px-6 py-3 bg-serene-600 hover:bg-serene-700 text-white rounded-xl text-sm font-semibold transition flex items-center justify-center gap-2">
+                        <i data-lucide="compass" class="w-4 h-4"></i>
+                        <span>Search Booking</span>
+                    </button>
+                </div>
+
+                <!-- Tracking Result Display Box -->
+                <div id="tracker-result" class="mt-6 hidden p-5 bg-white rounded-2xl border border-sand-200">
+                    <!-- Injected dynamically -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. CONTACT & CLINIC INFORMATION -->
+    <section id="contact" class="py-20 bg-sand-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <div class="lg:col-span-5 space-y-6">
+                    <div>
+                        <span class="text-serene-600 font-bold text-xs uppercase tracking-wider">Reach Out Today</span>
+                        <h2 class="font-serif text-3xl font-bold text-serene-900 mt-1">Serene Mind Clinical Centre</h2>
+                        <p class="text-sm text-slate-600 mt-2">
+                            Located centrally with serene ambiance, wheelchair accessibility, sound-proof consultation suites, and secure parking.
+                        </p>
+                    </div>
+
+                    <div class="space-y-4 text-sm text-slate-700">
+                        <div class="flex items-start gap-3.5 p-3.5 rounded-2xl bg-white border border-sand-200">
+                            <div class="w-9 h-9 rounded-xl bg-serene-100 text-serene-700 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="map-pin" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-slate-900">Clinic Address</p>
+                                <p class="text-xs text-slate-500 mt-0.5 leading-relaxed">
+                                    Suite 402, Serene Mind Wellness Clinic, Green Park South, New Delhi, 110016
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3.5 p-3.5 rounded-2xl bg-white border border-sand-200">
+                            <div class="w-9 h-9 rounded-xl bg-serene-100 text-serene-700 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="clock" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-slate-900">Clinic Working Hours</p>
+                                <p class="text-xs text-slate-500 mt-0.5">Monday - Saturday: 10:00 AM – 07:00 PM</p>
+                                <p class="text-xs text-slate-400">Sunday: Closed for Clinical Research</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3.5 p-3.5 rounded-2xl bg-white border border-sand-200">
+                            <div class="w-9 h-9 rounded-xl bg-serene-100 text-serene-700 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="phone" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-slate-900">Official Mobile & WhatsApp</p>
+                                <p class="text-xs text-slate-500 mt-0.5" id="contact-display-phone">+91 98765 43210</p>
+                                <p class="text-[11px] text-serene-600 font-medium">WhatsApp click-to-chat available 24/7</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3.5 p-3.5 rounded-2xl bg-white border border-sand-200">
+                            <div class="w-9 h-9 rounded-xl bg-serene-100 text-serene-700 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="mail" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-slate-900">Direct Email</p>
+                                <p class="text-xs text-slate-500 mt-0.5">care@drananyasharma.in</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Interactive Map Preview Card -->
+                <div class="lg:col-span-7">
+                    <div class="bg-white p-3 rounded-3xl border border-sand-200 shadow-lg h-full flex flex-col justify-between">
+                        <div class="relative w-full h-[360px] rounded-2xl overflow-hidden bg-sand-100 border border-sand-200">
+                            <!-- Responsive simulated map representation -->
+                            <iframe 
+                                title="Clinic Location Map"
+                                class="w-full h-full border-0 grayscale-[25%] contrast-[1.05]"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14016.997232247277!2d77.19894458385011!3d28.562283832140417!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce2659e555555%3A0x88fef8091a03d159!2sGreen%20Park%2C%20New%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+                                allowfullscreen="" 
+                                loading="lazy">
+                            </iframe>
+                            <div class="absolute bottom-3 left-3 bg-white/95 backdrop-blur-md p-3 rounded-xl border border-sand-200 text-xs shadow-md">
+                                <span class="font-bold text-serene-900">Serene Mind Clinic</span> • Green Park Metro Station (Exit 2)
+                            </div>
+                        </div>
+
+                        <div class="mt-4 p-4 rounded-xl bg-sand-50 border border-sand-200 flex flex-col sm:flex-row items-center justify-between gap-3">
+                            <div class="text-xs text-slate-600">
+                                Want quick directions or help locating the clinic?
+                            </div>
+                            <a href="https://maps.google.com/?q=Green+Park+New+Delhi" target="_blank" rel="noopener noreferrer" 
+                               class="px-4 py-2 bg-serene-600 hover:bg-serene-700 text-white rounded-lg text-xs font-semibold transition flex items-center gap-1.5">
+                                <i data-lucide="navigation" class="w-3.5 h-3.5"></i>
+                                <span>Get Google Directions</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. DOCTOR ADMIN DASHBOARD MODAL -->
+    <div id="admin-modal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden items-center justify-center p-3 sm:p-6 overflow-y-auto">
+        <div class="bg-white rounded-3xl max-w-5xl w-full p-6 sm:p-8 shadow-2xl border border-sand-200 relative my-6">
+            
+            <!-- Close Admin Modal -->
+            <button onclick="closeAdminModal()" class="absolute top-5 right-5 text-slate-400 hover:text-slate-600 p-2 rounded-full hover:bg-slate-100 transition">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+
+            <!-- Admin Authentication Overlay (If not authenticated) -->
+            <div id="admin-auth-view" class="py-12 max-w-sm mx-auto text-center space-y-4">
+                <div class="w-12 h-12 bg-serene-100 text-serene-700 rounded-2xl flex items-center justify-center mx-auto">
+                    <i data-lucide="lock" class="w-6 h-6"></i>
+                </div>
+                <h3 class="font-serif text-2xl font-bold text-slate-900">Doctor Access Portal</h3>
+                <p class="text-xs text-slate-500">Enter your clinical security passcode to access patient bookings & practice management.</p>
+                <div class="space-y-3">
+                    <input type="password" id="admin-pin" placeholder="Enter PIN (Default: 1234)" 
+                           class="w-full text-center px-4 py-3 bg-white border border-sand-300 rounded-xl text-base tracking-widest focus:ring-2 focus:ring-serene-500 outline-none">
+                    <button onclick="verifyAdminPIN()" class="w-full py-3 bg-serene-600 hover:bg-serene-700 text-white font-bold rounded-xl text-sm transition">
+                        Authorize Dashboard Access
+                    </button>
+                    <p class="text-[11px] text-slate-400">Default demo PIN: <strong>1234</strong></p>
+                </div>
+            </div>
+
+            <!-- Admin Main View (Shown when authorized) -->
+            <div id="admin-dashboard-view" class="hidden space-y-6">
+                <!-- Top Nav inside Admin -->
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-sand-200 gap-3">
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <h3 class="font-serif text-2xl font-bold text-serene-900">Practice Management Console</h3>
+                            <span class="px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-bold">Admin Active</span>
+                        </div>
+                        <p class="text-xs text-slate-500 mt-0.5">Manage patient consultations, confirm statuses, and configure UPI payment settings.</p>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <button onclick="toggleBackendDocsModal()" class="px-3 py-1.5 bg-sand-100 hover:bg-sand-200 text-slate-700 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition">
+                            <i data-lucide="code-2" class="w-3.5 h-3.5"></i>
+                            <span>Backend Architecture</span>
+                        </button>
+                        <button onclick="logoutAdmin()" class="px-3 py-1.5 text-rose-600 hover:bg-rose-50 rounded-lg text-xs font-semibold transition">
+                            Sign Out
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Admin Metrics -->
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div class="p-4 rounded-2xl bg-sand-50 border border-sand-200">
+                        <span class="text-xs text-slate-500 font-medium">Total Bookings</span>
+                        <div class="text-2xl font-bold font-serif text-slate-900 mt-1" id="metric-total">0</div>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-emerald-50 border border-emerald-200">
+                        <span class="text-xs text-emerald-700 font-medium">Advance Revenue</span>
+                        <div class="text-2xl font-bold font-serif text-emerald-900 mt-1" id="metric-revenue">₹0</div>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-amber-50 border border-amber-200">
+                        <span class="text-xs text-amber-700 font-medium">Pending Confirmation</span>
+                        <div class="text-2xl font-bold font-serif text-amber-900 mt-1" id="metric-pending">0</div>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-serene-50 border border-serene-200">
+                        <span class="text-xs text-serene-700 font-medium">Confirmed Patients</span>
+                        <div class="text-2xl font-bold font-serif text-serene-900 mt-1" id="metric-confirmed">0</div>
+                    </div>
+                </div>
+
+                <!-- Configuration Tab (UPI and WhatsApp) -->
+                <div class="p-5 rounded-2xl bg-white border border-sand-300">
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-slate-800 mb-3 flex items-center gap-2">
+                        <i data-lucide="settings" class="w-4 h-4 text-serene-600"></i> Clinic Payment & WhatsApp Settings
+                    </h4>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-600 mb-1">Doctor UPI ID</label>
+                            <input type="text" id="admin-cfg-upi" value="dr.ananya@oksbi" 
+                                   class="w-full px-3.5 py-2 bg-sand-50 border border-sand-300 rounded-lg text-xs font-mono font-bold text-slate-800">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-600 mb-1">WhatsApp Business Number (with Country Code)</label>
+                            <input type="text" id="admin-cfg-phone" value="919876543210" 
+                                   class="w-full px-3.5 py-2 bg-sand-50 border border-sand-300 rounded-lg text-xs font-mono font-bold text-slate-800">
+                        </div>
+                    </div>
+                    <div class="mt-3 flex justify-end">
+                        <button onclick="saveAdminSettings()" class="px-4 py-2 bg-serene-600 hover:bg-serene-700 text-white rounded-lg text-xs font-semibold transition">
+                            Save Settings
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Appointments Table -->
+                <div class="border border-sand-200 rounded-2xl overflow-hidden">
+                    <div class="p-4 bg-sand-50 border-b border-sand-200 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                        <h4 class="font-serif font-bold text-slate-900 text-sm">Appointment Requests & Transactions</h4>
+                        <div class="flex items-center gap-2 text-xs">
+                            <span class="text-slate-500">Filter:</span>
+                            <select id="admin-filter" onchange="renderAdminAppointments()" class="bg-white border border-sand-300 rounded-md px-2 py-1 text-xs">
+                                <option value="all">All Appointments</option>
+                                <option value="Awaiting Doctor Confirmation">Awaiting Doctor Confirmation</option>
+                                <option value="Confirmed">Confirmed</option>
+                                <option value="Cancelled">Cancelled</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="overflow-x-auto max-h-80">
+                        <table class="w-full text-left text-xs">
+                            <thead class="bg-sand-100 text-slate-600 font-bold uppercase tracking-wider sticky top-0">
+                                <tr>
+                                    <th class="p-3">Ref ID / Date</th>
+                                    <th class="p-3">Patient Info</th>
+                                    <th class="p-3">Service</th>
+                                    <th class="p-3">Advance Fee</th>
+                                    <th class="p-3">Status</th>
+                                    <th class="p-3 text-right">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="admin-appointments-tbody" class="divide-y divide-sand-200 bg-white">
+                                <!-- Dynamic rows -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- BACKEND ARCHITECTURE & NODE/EXPRESS/MONGODB DOCUMENTATION MODAL -->
+    <div id="backend-docs-modal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-slate-900 text-slate-200 rounded-3xl max-w-4xl w-full p-6 sm:p-8 shadow-2xl border border-slate-700 relative my-6 max-h-[85vh] overflow-y-auto">
+            <button onclick="toggleBackendDocsModal()" class="absolute top-5 right-5 text-slate-400 hover:text-white p-1 rounded-full">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+
+            <h3 class="font-mono text-lg font-bold text-emerald-400 mb-1">&lt;Backend Architecture & Node.js / Razorpay Verification&gt;</h3>
+            <p class="text-xs text-slate-400 mb-4">Production-grade cryptographic verification, Mongoose schemas, and webhook handlers.</p>
+
+            <div class="space-y-4 text-xs font-mono">
+                <!-- Snippet 1: Mongoose Schema -->
+                <div class="bg-slate-950 p-4 rounded-xl border border-slate-800">
+                    <p class="text-amber-400 font-bold mb-2">// 1. MongoDB Mongoose Appointment Schema (models/Appointment.js)</p>
+                    <pre class="overflow-x-auto text-[11px] text-slate-300">
+const mongoose = require('mongoose');
+
+const appointmentSchema = new mongoose.Schema({
+  bookingId: { type: String, required: true, unique: true },
+  fullName: { type: String, required: true },
+  mobileNumber: { type: String, required: true },
+  age: { type: Number, required: true },
+  service: { type: String, required: true },
+  appointmentDate: { type: Date, required: true },
+  timeSlot: { type: String, required: true },
+  concernMessage: { type: String, required: true },
+  advanceFeeAmount: { type: Number, default: 500 },
+  paymentStatus: {
+    type: String,
+    enum: ['Pending Payment', 'Payment Successful', 'Awaiting Doctor Confirmation', 'Confirmed', 'Cancelled'],
+    default: 'Pending Payment'
+  },
+  razorpayOrderId: { type: String },
+  razorpayPaymentId: { type: String },
+  paymentVerifiedAt: { type: Date }
+}, { timestamps: true });
+
+module.exports = mongoose.model('Appointment', appointmentSchema);
+                    </pre>
+                </div>
+
+                <!-- Snippet 2: Express Server & Cryptographic Verification -->
+                <div class="bg-slate-950 p-4 rounded-xl border border-slate-800">
+                    <p class="text-amber-400 font-bold mb-2">// 2. Razorpay Webhook & Signature Verification (routes/payment.js)</p>
+                    <pre class="overflow-x-auto text-[11px] text-slate-300">
+const crypto = require('crypto');
+const express = require('express');
+const router = express.Router();
+const Appointment = require('../models/Appointment');
+
+// Server-side Signature Verification (Never confirm on frontend!)
+router.post('/verify-payment', async (req, res) => {
+  try {
+    const { razorpay_order_id, razorpay_payment_id, razorpay_signature, bookingId } = req.body;
+    
+    // Generate expected cryptographic signature
+    const hmac = crypto.createHmac('sha256', process.env.RAZORPAY_KEY_SECRET);
+    hmac.update(`${razorpay_order_id}|${razorpay_payment_id}`);
+    const generatedSignature = hmac.digest('hex');
+
+    if (generatedSignature === razorpay_signature) {
+      // Payment authenticity confirmed cryptographically
+      const updated = await Appointment.findOneAndUpdate(
+        { bookingId },
+        {
+          paymentStatus: 'Awaiting Doctor Confirmation',
+          razorpayOrderId: razorpay_order_id,
+          razorpayPaymentId: razorpay_payment_id,
+          paymentVerifiedAt: new Date()
+        },
+        { new: true }
+      );
+      return res.status(200).json({ success: true, message: 'Payment verified successfully', appointment: updated });
+    } else {
+      return res.status(400).json({ success: false, message: 'Invalid payment signature - potential tampering!' });
+    }
+  } catch (err) {
+    return res.status(500).json({ success: false, error: err.message });
+  }
+});
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-serene-900 text-serene-200 pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-12 border-b border-serene-800">
+                
+                <div class="space-y-4 md:col-span-1">
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 rounded-lg bg-serene-600 flex items-center justify-center text-white">
+                            <i data-lucide="flower-2" class="w-5 h-5"></i>
+                        </div>
+                        <span class="font-serif text-lg font-bold text-white">Dr. Dhananjay Tiwari</span>
+                    </div>
+                    <p class="text-xs text-serene-400 leading-relaxed">
+                        Dedicated to ethical, compassionate, evidence-based psychological counselling and emotional well-being.
+                    </p>
+                    <p class="text-[11px] text-serene-400">RCI License: CRR/A89211</p>
+                </div>
+
+                <div>
+                    <h5 class="text-xs font-bold uppercase tracking-wider text-white mb-4">Quick Navigation</h5>
+                    <ul class="space-y-2 text-xs text-serene-400">
+                        <li><a href="#home" class="hover:text-white transition">Home</a></li>
+                        <li><a href="#about" class="hover:text-white transition">About Doctor</a></li>
+                        <li><a href="#services" class="hover:text-white transition">Therapy Services</a></li>
+                        <li><a href="#book-appointment" class="hover:text-white transition">Book Consultation</a></li>
+                        <li><a href="#tracker" class="hover:text-white transition">Check Appointment Status</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="text-xs font-bold uppercase tracking-wider text-white mb-4">Therapies</h5>
+                    <ul class="space-y-2 text-xs text-serene-400">
+                        <li>Cognitive Behavioral Therapy (CBT)</li>
+                        <li>Rational Emotive Behavior (REBT)</li>
+                        <li>Couples & Marital Counselling</li>
+                        <li>Trauma Recovery & EMDR</li>
+                        <li>Adolescent Mental Health</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="text-xs font-bold uppercase tracking-wider text-white mb-4">Safety & Confidentiality</h5>
+                    <p class="text-xs text-serene-400 leading-relaxed mb-3">
+                        All therapy sessions are bound under professional medical confidentiality and HIPAA/RCI guidelines.
+                    </p>
+                    <div class="p-3 rounded-xl bg-serene-800/80 border border-serene-700 text-[11px] text-serene-300">
+                        <span class="font-bold text-white block">Immediate Crisis?</span>
+                        Please contact emergency services (112) or Tele-MANAS (14416).
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-serene-400 gap-4">
+                <p>© 2026 Dr. Dhananjay Tiwari Clinical Psychological Practice. All rights reserved.</p>
+                <div class="flex items-center gap-6">
+                    <span class="hover:text-white cursor-pointer" onclick="openAdminModal()">Doctor Login</span>
+                    <span class="hover:text-white cursor-pointer" onclick="toggleBackendDocsModal()">Developer Architecture</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT STATE ENGINE & WORKFLOW -->
+    <script>
+        // Global State & Mock Database (Persisted in localStorage)
+        const STORAGE_KEY = 'serenemind_appointments_v1';
+        const CONFIG_KEY = 'serenemind_config_v1';
+
+        // Initial default configuration
+        let clinicConfig = {
+            doctorUpiId: 'dr.ananya@oksbi',
+            doctorWhatsAppPhone: '919876543210', // Without '+' for wa.me URL
+            advanceFee: 500,
+            doctorName: 'Dr. Dhananjay Tiwari'
+        };
+
+        // Seed Appointments
+        let appointments = [
+            {
+                bookingId: 'MIND-2026-8812',
+                fullName: 'Kavita Joshi',
+                mobileNumber: '9811223344',
+                age: 29,
+                service: 'Anxiety and Stress Management',
+                appointmentDate: '2026-11-10',
+                timeSlot: '05:30 PM - 06:20 PM',
+                concernMessage: 'Experiencing panic attacks before board meetings.',
+                advanceFee: 500,
+                status: 'Confirmed', // Confirmed, Awaiting Doctor Confirmation, Payment Successful, Pending Payment, Cancelled
+                bookedAt: new Date(Date.now() - 86400000 * 2).toISOString()
+            },
+            {
+                bookingId: 'MIND-2026-9043',
+                fullName: 'Arun Mehra',
+                mobileNumber: '9822334455',
+                age: 34,
+                service: 'Relationship Counselling',
+                appointmentDate: '2026-11-12',
+                timeSlot: '12:00 PM - 12:50 PM',
+                concernMessage: 'Communication deadlock with spouse.',
+                advanceFee: 500,
+                status: 'Awaiting Doctor Confirmation',
+                bookedAt: new Date(Date.now() - 3600000 * 4).toISOString()
+            }
+        ];
+
+        // Currently active booking during checkout
+        let currentBooking = null;
+
+        // Initialize App
+        window.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+            loadState();
+            setupDateConstraints();
+            renderAdminAppointments();
+            updateAdminMetrics();
+        });
+
+        // Load persisted state if exists
+        function loadState() {
+            const savedApps = localStorage.getItem(STORAGE_KEY);
+            if (savedApps) {
+                try { appointments = JSON.parse(savedApps); } catch (e) {}
+            }
+            const savedConfig = localStorage.getItem(CONFIG_KEY);
+            if (savedConfig) {
+                try { clinicConfig = { ...clinicConfig, ...JSON.parse(savedConfig) }; } catch (e) {}
+            }
+            updateConfigUI();
+        }
+
+        function saveState() {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(appointments));
+            localStorage.setItem(CONFIG_KEY, JSON.stringify(clinicConfig));
+            updateAdminMetrics();
+            renderAdminAppointments();
+        }
+
+        function updateConfigUI() {
+            document.getElementById('display-upi-id').innerText = clinicConfig.doctorUpiId;
+            document.getElementById('admin-cfg-upi').value = clinicConfig.doctorUpiId;
+            document.getElementById('admin-cfg-phone').value = clinicConfig.doctorWhatsAppPhone;
+            document.getElementById('contact-display-phone').innerText = '+' + clinicConfig.doctorWhatsAppPhone;
+            
+            // Update QR code URL
+            const upiUrl = `upi://pay?pa=${encodeURIComponent(clinicConfig.doctorUpiId)}&pn=${encodeURIComponent(clinicConfig.doctorName)}&am=${clinicConfig.advanceFee}&cu=INR&tn=AdvanceBooking`;
+            document.getElementById('qr-code-img').src = `https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${encodeURIComponent(upiUrl)}`;
+        }
+
+        // Restrict date input to today onwards
+        function setupDateConstraints() {
+            const today = new Date().toISOString().split('T')[0];
+            const dateInput = document.getElementById('appointment-date');
+            dateInput.min = today;
+            // Default select tomorrow
+            const tomorrow = new Date();
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            dateInput.value = tomorrow.toISOString().split('T')[0];
+        }
+
+        // Prefill Service from Service Card Click
+        function prefillService(serviceName) {
+            const select = document.getElementById('service-select');
+            select.value = serviceName;
+            const target = document.getElementById('book-appointment');
+            target.scrollIntoView({ behavior: 'smooth' });
+            // Highlight dropdown briefly
+            select.classList.add('ring-2', 'ring-serene-500');
+            setTimeout(() => select.classList.remove('ring-2', 'ring-serene-500'), 1500);
+        }
+
+        // Mobile Nav toggle
+        function toggleMobileNav() {
+            const nav = document.getElementById('mobile-nav');
+            nav.classList.toggle('hidden');
+        }
+
+        // Step 1: Handle Patient Form Submission & Validation
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('patient-name').value.trim();
+            const phone = document.getElementById('patient-phone').value.trim();
+            const age = parseInt(document.getElementById('patient-age').value.trim(), 10);
+            const date = document.getElementById('appointment-date').value;
+            const slot = document.getElementById('time-slot').value;
+            const service = document.getElementById('service-select').value;
+            const concern = document.getElementById('patient-concern').value.trim();
+
+            // Client validations
+            let valid = true;
+
+            // Name
+            if (name.length < 2) {
+                document.getElementById('err-name').classList.remove('hidden');
+                valid = false;
+            } else {
+                document.getElementById('err-name').classList.add('hidden');
+            }
+
+            // Indian phone: 10 digits
+            const phoneRegex = /^[6-9]\d{9}$/;
+            if (!phoneRegex.test(phone)) {
+                document.getElementById('err-phone').classList.remove('hidden');
+                valid = false;
+            } else {
+                document.getElementById('err-phone').classList.add('hidden');
+            }
+
+            // Age
+            if (isNaN(age) || age < 5 || age > 105) {
+                document.getElementById('err-age').classList.remove('hidden');
+                valid = false;
+            } else {
+                document.getElementById('err-age').classList.add('hidden');
+            }
+
+            if (!valid) return;
+
+            // Generate Unique Order Reference
+            const randomCode = Math.floor(1000 + Math.random() * 9000);
+            const bookingId = `MIND-2026-${randomCode}`;
+
+            currentBooking = {
+                bookingId,
+                fullName: name,
+                mobileNumber: phone,
+                age,
+                service,
+                appointmentDate: date,
+                timeSlot: slot,
+                concernMessage: concern,
+                advanceFee: clinicConfig.advanceFee,
+                status: 'Pending Payment',
+                bookedAt: new Date().toISOString()
+            };
+
+            // Open Payment Modal
+            showPaymentModal(currentBooking);
+        }
+
+        // Show Payment Modal
+        function showPaymentModal(booking) {
+            document.getElementById('modal-order-id').innerText = booking.bookingId;
+            document.getElementById('summary-name').innerText = `${booking.fullName} (${booking.age} yrs)`;
+            document.getElementById('summary-service').innerText = booking.service;
+            document.getElementById('summary-slot').innerText = `${booking.appointmentDate} at ${booking.timeSlot}`;
+            
+            document.getElementById('payment-modal').classList.remove('hidden');
+            document.getElementById('payment-modal').classList.add('flex');
+            
+            // Reset verification overlay
+            document.getElementById('verifying-overlay').classList.add('hidden');
+            document.getElementById('verifying-overlay').classList.remove('flex');
+            document.getElementById('verify-pay-btn').disabled = false;
+            lucide.createIcons();
+        }
+
+        function closePaymentModal() {
+            document.getElementById('payment-modal').classList.add('hidden');
+            document.getElementById('payment-modal').classList.remove('flex');
+        }
+
+        // Copy Doctor UPI
+        function copyUPI() {
+            const upi = clinicConfig.doctorUpiId;
+            copyToClipboard(upi, 'UPI ID copied to clipboard!');
+        }
+
+        // Step 2 & 5: Simulate Payment Verification (Gateway Webhook / Signature check)
+        function simulatePaymentVerification() {
+            if (!currentBooking) return;
+
+            const overlay = document.getElementById('verifying-overlay');
+            const btn = document.getElementById('verify-pay-btn');
+            
+            overlay.classList.remove('hidden');
+            overlay.classList.add('flex');
+            btn.disabled = true;
+
+            // Simulate server network roundtrip & cryptographic signature validation
+            setTimeout(() => {
+                overlay.classList.add('hidden');
+                overlay.classList.remove('flex');
+                
+                // Transition state: Payment Verified -> Awaiting Doctor Confirmation
+                currentBooking.status = 'Awaiting Doctor Confirmation';
+                currentBooking.verifiedPaymentId = 'pay_' + Math.random().toString(36).substring(2, 11).toUpperCase();
+                
+                // Add or update in list
+                const idx = appointments.findIndex(a => a.bookingId === currentBooking.bookingId);
+                if (idx > -1) {
+                    appointments[idx] = currentBooking;
+                } else {
+                    appointments.unshift(currentBooking);
+                }
+                saveState();
+
+                // Close payment modal & open WhatsApp modal
+                closePaymentModal();
+                showWhatsAppModal(currentBooking);
+
+                // Reset appointment form
+                document.getElementById('appointment-form').reset();
+                setupDateConstraints();
+            }, 1600);
+        }
+
+        // Step 6: Format & Display WhatsApp Confirmation Workflow
+        function formatWhatsAppMessage(b) {
+            return `Hello Doctor Ananya,\nI have successfully booked my appointment.\nPatient Name: ${b.fullName}\nMobile Number: ${b.mobileNumber}\nAge: ${b.age}\nAppointment Date: ${b.appointmentDate} (${b.timeSlot})\nService: ${b.service}\nBooking ID: ${b.bookingId}\nAdvance Payment: ₹${b.advanceFee}\nPayment Status: Successful\nPlease confirm my appointment.\nThank you.`;
+        }
+
+        function showWhatsAppModal(b) {
+            document.getElementById('wa-modal-id').innerText = b.bookingId;
+            const message = formatWhatsAppMessage(b);
+            document.getElementById('whatsapp-message-preview').innerText = message;
+
+            document.getElementById('whatsapp-modal').classList.remove('hidden');
+            document.getElementById('whatsapp-modal').classList.add('flex');
+            lucide.createIcons();
+        }
+
+        function closeWhatsAppModal() {
+            document.getElementById('whatsapp-modal').classList.add('hidden');
+            document.getElementById('whatsapp-modal').classList.remove('flex');
+        }
+
+        // Open WhatsApp via Click-to-Chat standard protocol
+        function openWhatsAppChat() {
+            if (!currentBooking) return;
+            const message = formatWhatsAppMessage(currentBooking);
+            const encoded = encodeURIComponent(message);
+            const phone = clinicConfig.doctorWhatsAppPhone;
+            const whatsappUrl = `https://wa.me/${phone}?text=${encoded}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+        function copyConfirmationText() {
+            if (!currentBooking) return;
+            const message = formatWhatsAppMessage(currentBooking);
+            copyToClipboard(message, 'WhatsApp confirmation message copied!');
+        }
+
+        // Step 8: Patient Booking Tracker
+        function trackAppointmentStatus() {
+            const query = document.getElementById('track-input').value.trim();
+            const resultBox = document.getElementById('tracker-result');
+            
+            if (!query) {
+                showToast('Please enter your Booking ID or Phone number.');
+                return;
+            }
+
+            const found = appointments.find(a => 
+                a.bookingId.toLowerCase() === query.toLowerCase() || 
+                a.mobileNumber === query
+            );
+
+            resultBox.classList.remove('hidden');
+
+            if (!found) {
+                resultBox.innerHTML = `
+                    <div class="text-center py-4">
+                        <i data-lucide="help-circle" class="w-8 h-8 text-slate-400 mx-auto mb-2"></i>
+                        <p class="text-sm font-bold text-slate-800">No Booking Found</p>
+                        <p class="text-xs text-slate-500 mt-1">We couldn't find an appointment matching "<strong>${escapeHtml(query)}</strong>". Please double check your booking reference or 10-digit number.</p>
+                    </div>
+                `;
+                lucide.createIcons();
+                return;
+            }
+
+            let badgeColor = 'bg-amber-100 text-amber-800 border-amber-300';
+            if (found.status === 'Confirmed') badgeColor = 'bg-emerald-100 text-emerald-800 border-emerald-300';
+            if (found.status === 'Cancelled') badgeColor = 'bg-rose-100 text-rose-800 border-rose-300';
+            if (found.status === 'Payment Successful') badgeColor = 'bg-blue-100 text-blue-800 border-blue-300';
+
+            resultBox.innerHTML = `
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-sand-200">
+                    <div>
+                        <span class="text-xs font-mono font-bold text-serene-700">${found.bookingId}</span>
+                        <h4 class="font-bold text-slate-800 text-base">${escapeHtml(found.fullName)} (${found.age} yrs)</h4>
+                    </div>
+                    <span class="inline-flex px-3 py-1 rounded-full text-xs font-bold border ${badgeColor}">
+                        ● ${found.status}
+                    </span>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-3 text-xs">
+                    <div><span class="text-slate-500">Service:</span> <span class="font-medium text-slate-800">${escapeHtml(found.service)}</span></div>
+                    <div><span class="text-slate-500">Date & Slot:</span> <span class="font-medium text-slate-800">${found.appointmentDate} (${found.timeSlot})</span></div>
+                    <div><span class="text-slate-500">Advance Paid:</span> <span class="font-medium text-emerald-700 font-bold">₹${found.advanceFee} (Verified via UPI)</span></div>
+                    <div><span class="text-slate-500">Contact:</span> <span class="font-medium text-slate-800">+91 ${found.mobileNumber}</span></div>
+                </div>
+                <div class="mt-4 pt-3 border-t border-sand-100 flex items-center justify-between">
+                    <p class="text-[11px] text-slate-500">Need to reschedule? Contact clinic via WhatsApp with your Reference ID.</p>
+                    <button onclick="relaunchWhatsApp('${found.bookingId}')" class="px-3 py-1.5 bg-[#25D366] text-white rounded-lg text-xs font-semibold flex items-center gap-1.5 hover:bg-[#20BD5A] transition">
+                        <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
+                        <span>Doctor Chat</span>
+                    </button>
+                </div>
+            `;
+            lucide.createIcons();
+        }
+
+        function relaunchWhatsApp(bId) {
+            const item = appointments.find(a => a.bookingId === bId);
+            if (item) {
+                currentBooking = item;
+                showWhatsAppModal(item);
+            }
+        }
+
+        // Step 9: Admin Dashboard Logic
+        let isAdminLoggedIn = false;
+
+        function openAdminModal() {
+            document.getElementById('admin-modal').classList.remove('hidden');
+            document.getElementById('admin-modal').classList.add('flex');
+            if (isAdminLoggedIn) {
+                showAdminView();
+            } else {
+                showAuthView();
+            }
+            lucide.createIcons();
+        }
+
+        function closeAdminModal() {
+            document.getElementById('admin-modal').classList.add('hidden');
+            document.getElementById('admin-modal').classList.remove('flex');
+        }
+
+        function showAuthView() {
+            document.getElementById('admin-auth-view').classList.remove('hidden');
+            document.getElementById('admin-dashboard-view').classList.add('hidden');
+        }
+
+        function showAdminView() {
+            document.getElementById('admin-auth-view').classList.add('hidden');
+            document.getElementById('admin-dashboard-view').classList.remove('hidden');
+            updateAdminMetrics();
+            renderAdminAppointments();
+            lucide.createIcons();
+        }
+
+        function verifyAdminPIN() {
+            const pin = document.getElementById('admin-pin').value;
+            if (pin === '1234') {
+                isAdminLoggedIn = true;
+                document.getElementById('admin-pin').value = '';
+                showAdminView();
+            } else {
+                showToast('Incorrect Passcode! Please use 1234.');
+            }
+        }
+
+        function logoutAdmin() {
+            isAdminLoggedIn = false;
+            showAuthView();
+        }
+
+        function updateAdminMetrics() {
+            const total = appointments.length;
+            const revenue = appointments.filter(a => a.status !== 'Cancelled' && a.status !== 'Pending Payment').length * clinicConfig.advanceFee;
+            const pending = appointments.filter(a => a.status === 'Awaiting Doctor Confirmation').length;
+            const confirmed = appointments.filter(a => a.status === 'Confirmed').length;
+
+            document.getElementById('metric-total').innerText = total;
+            document.getElementById('metric-revenue').innerText = `₹${revenue.toLocaleString('en-IN')}`;
+            document.getElementById('metric-pending').innerText = pending;
+            document.getElementById('metric-confirmed').innerText = confirmed;
+        }
+
+        function renderAdminAppointments() {
+            const tbody = document.getElementById('admin-appointments-tbody');
+            const filter = document.getElementById('admin-filter').value;
+            
+            let list = appointments;
+            if (filter !== 'all') {
+                list = appointments.filter(a => a.status === filter);
+            }
+
+            if (list.length === 0) {
+                tbody.innerHTML = `
+                    <tr>
+                        <td colspan="6" class="p-6 text-center text-slate-400">No appointments found matching filter.</td>
+                    </tr>
+                `;
+                return;
+            }
+
+            tbody.innerHTML = list.map(item => {
+                let badgeClass = 'bg-amber-100 text-amber-800';
+                if (item.status === 'Confirmed') badgeClass = 'bg-emerald-100 text-emerald-800';
+                if (item.status === 'Cancelled') badgeClass = 'bg-rose-100 text-rose-800';
+                if (item.status === 'Pending Payment') badgeClass = 'bg-slate-100 text-slate-700';
+
+                return `
+                    <tr class="hover:bg-sand-50/60 transition">
+                        <td class="p-3">
+                            <span class="font-mono font-bold text-serene-700 block">${item.bookingId}</span>
+                            <span class="text-[10px] text-slate-400">${item.appointmentDate} (${item.timeSlot})</span>
+                        </td>
+                        <td class="p-3">
+                            <span class="font-semibold text-slate-900 block">${escapeHtml(item.fullName)} (${item.age}y)</span>
+                            <span class="text-[11px] text-slate-500 font-mono">+91 ${item.mobileNumber}</span>
+                        </td>
+                        <td class="p-3">
+                            <span class="text-xs text-slate-700 block">${escapeHtml(item.service)}</span>
+                            <span class="text-[10px] text-slate-400 italic block truncate max-w-xs" title="${escapeHtml(item.concernMessage)}">"${escapeHtml(item.concernMessage)}"</span>
+                        </td>
+                        <td class="p-3">
+                            <span class="font-bold text-slate-800">₹${item.advanceFee}</span>
+                            <span class="text-[10px] block text-emerald-600 font-semibold">UPI Advance</span>
+                        </td>
+                        <td class="p-3">
+                            <span class="px-2 py-0.5 rounded-full text-[10px] font-bold ${badgeClass}">
+                                ${item.status}
+                            </span>
+                        </td>
+                        <td class="p-3 text-right">
+                            <div class="flex items-center justify-end gap-1.5">
+                                ${item.status !== 'Confirmed' ? `
+                                <button onclick="changeAppointmentStatus('${item.bookingId}', 'Confirmed')" title="Confirm Appointment" 
+                                        class="p-1.5 rounded-lg bg-emerald-50 text-emerald-700 hover:bg-emerald-100 border border-emerald-200">
+                                    <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                                </button>
+                                ` : ''}
+                                ${item.status !== 'Cancelled' ? `
+                                <button onclick="changeAppointmentStatus('${item.bookingId}', 'Cancelled')" title="Cancel / Reject" 
+                                        class="p-1.5 rounded-lg bg-rose-50 text-rose-700 hover:bg-rose-100 border border-rose-200">
+                                    <i data-lucide="x" class="w-3.5 h-3.5"></i>
+                                </button>
+                                ` : ''}
+                                <button onclick="viewPatientNotes('${item.bookingId}')" title="View Message Notes"
+                                        class="p-1.5 rounded-lg bg-sand-100 text-slate-700 hover:bg-sand-200 border border-sand-300">
+                                    <i data-lucide="file-text" class="w-3.5 h-3.5"></i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+            lucide.createIcons();
+        }
+
+        function changeAppointmentStatus(id, newStatus) {
+            const item = appointments.find(a => a.bookingId === id);
+            if (item) {
+                item.status = newStatus;
+                saveState();
+                showToast(`Appointment ${id} marked as ${newStatus}`);
+            }
+        }
+
+        function viewPatientNotes(id) {
+            const item = appointments.find(a => a.bookingId === id);
+            if (item) {
+                showToast(`Reason for Consultation: "${item.concernMessage}"`);
+            }
+        }
+
+        function saveAdminSettings() {
+            const newUpi = document.getElementById('admin-cfg-upi').value.trim();
+            const newPhone = document.getElementById('admin-cfg-phone').value.trim();
+
+            if (!newUpi || !newPhone) {
+                showToast('Please fill in both UPI ID and WhatsApp Number.');
+                return;
+            }
+
+            clinicConfig.doctorUpiId = newUpi;
+            clinicConfig.doctorWhatsAppPhone = newPhone.replace(/\D/g, '');
+            saveState();
+            updateConfigUI();
+            showToast('Clinic settings updated successfully!');
+        }
+
+        function toggleBackendDocsModal() {
+            const modal = document.getElementById('backend-docs-modal');
+            modal.classList.toggle('hidden');
+            modal.classList.toggle('flex');
+            lucide.createIcons();
+        }
+
+        // Utility: Copy to Clipboard fallback
+        function copyToClipboard(text, successMsg) {
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            textarea.style.position = 'fixed';
+            textarea.style.opacity = '0';
+            document.body.appendChild(textarea);
+            textarea.focus();
+            textarea.select();
+            try {
+                document.execCommand('copy');
+                showToast(successMsg);
+            } catch (err) {
+                showToast('Failed to copy text.');
+            }
+            document.body.removeChild(textarea);
+        }
+
+        // Custom in-page non-blocking notification toast
+        function showToast(msg) {
+            const toast = document.createElement('div');
+            toast.className = 'fixed bottom-5 right-5 z-50 bg-serene-900 text-white px-5 py-3 rounded-2xl shadow-2xl text-xs font-medium border border-serene-700 animate-in fade-in slide-in-from-bottom duration-200 flex items-center gap-2';
+            toast.innerHTML = `<i data-lucide="info" class="w-4 h-4 text-serene-300"></i> <span>${escapeHtml(msg)}</span>`;
+            document.body.appendChild(toast);
+            lucide.createIcons();
+            setTimeout(() => {
+                toast.classList.add('opacity-0', 'transition-opacity', 'duration-300');
+                setTimeout(() => toast.remove(), 300);
+            }, 3200);
+        }
+
+        function escapeHtml(string) {
+            const div = document.createElement('div');
+            div.innerText = string;
+            return div.innerHTML;
+        }
+    </script>
+</body>
+</html>
